@@ -1,5 +1,18 @@
 import { uid } from "uid";
 import { Icon } from "../Icon/Icon";
+import {
+  CarImage,
+  CarItem,
+  Desctiption,
+  HeadInfo,
+  HeadInfocontainer,
+  LocationAndRating,
+  PriceContainer,
+  ShowMoreBtn,
+  TagContainer,
+  TagText,
+  TagsContainer,
+} from "./Car.styled";
 
 export const Car = ({ car }) => {
   const defineTabs = (tab, value) => {
@@ -14,43 +27,51 @@ export const Car = ({ car }) => {
   };
 
   return (
-    <li>
-      <img
+    <CarItem>
+      <CarImage
+        $bgImage={
+          car.gallery[0] ||
+          "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+        }
+      ></CarImage>
+      {/* <CarImage
         src={
           car.gallery[0] ||
           "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
         }
         alt="car image"
-      />
+      /> */}
       <div>
-        <div>
-          <p>{car.name}</p>
-          <p>€{car.price}.00</p>
-          <Icon width={24} height={24} iconId={"heart"} />
-        </div>
-        <div>
+        <HeadInfocontainer>
+          <HeadInfo>{car.name}</HeadInfo>
+          <PriceContainer>
+            <HeadInfo>€{car.price}.00</HeadInfo>
+            <Icon width={24} height={24} iconId={"heart"} />
+          </PriceContainer>
+        </HeadInfocontainer>
+        <LocationAndRating>
           <p>
             {car.rating} <span>{car.reviews.length || 0} Reviews</span>
           </p>
           <p>{car.location}</p>
-        </div>
-        <p>{car.description}</p>
-        <div>
+        </LocationAndRating>
+        <Desctiption>{car.description}</Desctiption>
+        <TagsContainer>
           {Object.entries(car.details).map(([key, value]) => {
             return value === 0 ? (
               <div style={{ display: "none" }} key={uid()}></div>
             ) : (
-              <div key={uid()}>
+              <TagContainer key={uid()}>
                 {/* <Icon /> */}
-                <p style={{ color: "red" }}>
+                <TagText>
                   {defineTabs(key, value)} {key}
-                </p>
-              </div>
+                </TagText>
+              </TagContainer>
             );
           })}
-        </div>
-        <button>Show more</button>
+        </TagsContainer>
+        <ShowMoreBtn>Show more</ShowMoreBtn>
       </div>
-    </li>
+    </CarItem>
   );
 };

@@ -90,5 +90,9 @@ button {
   margin: 0 auto;
   padding: 100px 64px;
   max-width: 1440px;
+  display: flex;
+  gap: 64px;
 }
+
+
 `;

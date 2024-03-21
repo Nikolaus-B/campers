@@ -54,4 +54,10 @@ export const SearchButton = styled.button`
   border-radius: 200px;
   border: none;
   color: ${(p) => p.theme.colors.buttonText};
+
+  transition: background-color ${(p) => p.theme.transition.transitionDurAndFunc};
+
+  &:hover {
+    background-color: ${(p) => p.theme.colors.hoverColor};
+  }
 `;

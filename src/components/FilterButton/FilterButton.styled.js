@@ -2,13 +2,16 @@ import styled from "styled-components";
 
 export const FilterButtonStyled = styled.button`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
 
+  padding: 18px;
   max-width: 128px;
   height: 95px;
+
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
 
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
@@ -20,5 +23,6 @@ export const ButtonContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  gap: 5px;
+  max-width: 80px;
 `;
