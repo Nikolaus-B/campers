@@ -13,8 +13,20 @@ import {
   TagText,
   TagsContainer,
 } from "./Car.styled";
+import { CarModal } from "../CarModal/CarModal";
+import { useState } from "react";
 
 export const Car = ({ car }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   const defineTabs = (tab, value) => {
     if (tab === "beds") {
       return value;
@@ -34,13 +46,6 @@ export const Car = ({ car }) => {
           "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
         }
       ></CarImage>
-      {/* <CarImage
-        src={
-          car.gallery[0] ||
-          "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
-        }
-        alt="car image"
-      /> */}
       <div>
         <HeadInfocontainer>
           <HeadInfo>{car.name}</HeadInfo>
@@ -70,8 +75,10 @@ export const Car = ({ car }) => {
             );
           })}
         </TagsContainer>
-        <ShowMoreBtn>Show more</ShowMoreBtn>
+        <ShowMoreBtn onClick={() => openModal()}>Show more</ShowMoreBtn>
       </div>
+
+      <CarModal modalIsOpen={modalIsOpen} closeModal={closeModal} car={car} />
     </CarItem>
   );
 };
