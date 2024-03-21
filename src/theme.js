@@ -6,6 +6,7 @@ export const theme = {
     yellow: "#FFC531",
     mainWhite: "#F2F4F7",
     white: "#F7F7F7",
+    buttonText: "#FFFFFF",
   },
   radius: {
     sm: "4px",

@@ -2,9 +2,26 @@ import { uid } from "uid";
 import { Icon } from "../Icon/Icon";
 
 export const Car = ({ car }) => {
+  const defineTabs = (tab, value) => {
+    if (tab === "beds") {
+      return value;
+    } else if (tab === "hob") {
+      return value;
+    } else if (tab === "adult") {
+      return value;
+    }
+    return value === 1 ? "" : value;
+  };
+
   return (
     <li>
-      <img src="" alt="car image" />
+      <img
+        src={
+          car.gallery[0] ||
+          "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+        }
+        alt="car image"
+      />
       <div>
         <div>
           <p>{car.name}</p>
@@ -19,9 +36,18 @@ export const Car = ({ car }) => {
         </div>
         <p>{car.description}</p>
         <div>
-          {/* {Object.entries(car.details).map(([key, value]) => {
-            
-          })} */}
+          {Object.entries(car.details).map(([key, value]) => {
+            return value === 0 ? (
+              <div style={{ display: "none" }} key={uid()}></div>
+            ) : (
+              <div key={uid()}>
+                {/* <Icon /> */}
+                <p style={{ color: "red" }}>
+                  {defineTabs(key, value)} {key}
+                </p>
+              </div>
+            );
+          })}
         </div>
         <button>Show more</button>
       </div>

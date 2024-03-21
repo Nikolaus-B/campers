@@ -3,7 +3,7 @@ import { Filters } from "../components/Filters/Filters";
 
 export default function HomePage() {
   return (
-    <section>
+    <section className="container">
       <Filters />
       <CarsList />
     </section>

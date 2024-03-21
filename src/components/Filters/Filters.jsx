@@ -1,17 +1,26 @@
 import { FilterButton } from "../FilterButton/FilterButton";
+import {
+  CategoriesLine,
+  CategoriesText,
+  FilterInput,
+  FilterText,
+  FiltersButtonContainer,
+  Location,
+  SearchButton,
+} from "./Filters.styled";
 
 export const Filters = () => {
   return (
     <div>
       <div>
-        <p>Location</p>
-        <input name="location" type="text" />
+        <Location>Location</Location>
+        <FilterInput name="location" type="text" placeholder="Kyiv, Ukraine" />
       </div>
-      <p>Filters</p>
+      <FilterText>Filters</FilterText>
       <div>
-        <p>Vehicle equipment</p>
-        <div></div>
-        <div>
+        <CategoriesText>Vehicle equipment</CategoriesText>
+        <CategoriesLine></CategoriesLine>
+        <FiltersButtonContainer>
           <FilterButton id={"ac"} iconType={"equipment"} text={"AC"} />
           <FilterButton
             id={"automatic"}
@@ -29,10 +38,10 @@ export const Filters = () => {
             iconType={"equipment"}
             text={"Shower/WC"}
           />
-        </div>
-        <p>Vehicle type</p>
-        <div></div>
-        <div>
+        </FiltersButtonContainer>
+        <CategoriesText>Vehicle type</CategoriesText>
+        <CategoriesLine></CategoriesLine>
+        <FiltersButtonContainer>
           <FilterButton id={"camper-2"} iconType={"vehicle"} text={"Van"} />
           <FilterButton
             id={"camper-1"}
@@ -40,9 +49,9 @@ export const Filters = () => {
             text={"Fully Integrated"}
           />
           <FilterButton id={"camper-3"} iconType={"vehicle"} text={"Alcove"} />
-        </div>
+        </FiltersButtonContainer>
       </div>
-      <button>Search</button>
+      <SearchButton>Search</SearchButton>
     </div>
   );
 };

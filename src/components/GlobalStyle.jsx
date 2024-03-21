@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inter", sans-serif;
+  color: ${(p) => p.theme.colors.dark};
   }
 
 
@@ -34,8 +35,8 @@ button {
 }
 
 p {
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 400;
 }
 
@@ -85,4 +86,9 @@ button {
   clip: rect(0 0 0 0);
 }
 
+.container {
+  margin: 0 auto;
+  padding: 100px 64px;
+  max-width: 1440px;
+}
 `;
