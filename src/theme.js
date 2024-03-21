@@ -12,9 +12,16 @@ export const theme = {
     loadMoreBorderColor: "rgba(71, 84, 103, 0.2)",
   },
   radius: {
-    sm: "4px",
-    md: "8px",
-    lg: "16px",
+    sm: "10px",
+    md: "20px",
+    lg: "100px",
+    xlg: "200px",
+  },
+  fonts: {
+    mdSize: "20px",
+    bigSize: "24px",
+    bigHeith: "30px",
+    bold: "600",
   },
   transition: {
     transitionDurAndFunc: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
@@ -22,3 +29,5 @@ export const theme = {
 };
 
 // ${p => p.theme.colors.white}
+// ${p => p.theme.radius.sm}
+//  ${p => p.theme.fonts.mdSize}

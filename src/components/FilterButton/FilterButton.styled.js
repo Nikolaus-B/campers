@@ -14,7 +14,7 @@ export const FilterButtonStyled = styled.button`
   font-weight: 500;
 
   border: 1px solid rgba(16, 24, 40, 0.2);
-  border-radius: 10px;
+  border-radius: ${(p) => p.theme.radius.sm};
   background-color: transparent;
 `;
 

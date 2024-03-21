@@ -11,7 +11,7 @@ export const FilterInput = styled.input`
   padding: 18px;
 
   border: none;
-  border-radius: 10px;
+  border-radius: ${(p) => p.theme.radius.sm};
   background-color: ${(p) => p.theme.colors.white};
   outline: none;
 `;
@@ -51,7 +51,7 @@ export const SearchButton = styled.button`
   margin-top: 32px;
 
   background-color: ${(p) => p.theme.colors.red};
-  border-radius: 200px;
+  border-radius: ${(p) => p.theme.radius.xlg};
   border: none;
   color: ${(p) => p.theme.colors.buttonText};
 

@@ -1,31 +1,45 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
+import { CarImage } from "../Car/Car.styled";
+import { uid } from "uid";
+import {
+  ImagesList,
+  ModalDescription,
+  ModalLocationAndRating,
+  ModalName,
+  ModalPrice,
+  PopUpsBtnContainer,
+  PopupsBtns,
+} from "./CarModal.styled";
 
 const customStyles = {
   overlay: {
     position: "fixed",
     width: "100vw",
-    // height: "100vh",
+    height: "100vh",
     padding: "40px 0 40px 0",
     background: "rgba(0, 0, 0, 0.8)",
   },
 
   content: {
+    position: "relative",
     width: "982px",
-    height: "720px",
-    margin: "0 auto 20px auto ",
+    height: "700px",
+    margin: "0 auto",
+    top: "0",
     // overflow: "hidden",
-    //   WebkitOverflowScrolling: "touch",
+
     borderRadius: "4px",
     outline: "none",
-    // padding: "20px",
-    bottom: "20px",
+    padding: "20px 20px 40px 20px",
   },
 };
 
 Modal.setAppElement("#root");
 
-export const CarModal = ({ modalIsOpen, closeModal }) => {
+export const CarModal = ({ modalIsOpen, closeModal, car }) => {
+  const [showPopUp, setShowPopUp] = useState(false);
+
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
     if (modalIsOpen) {
@@ -55,8 +69,38 @@ export const CarModal = ({ modalIsOpen, closeModal }) => {
       style={customStyles}
       contentLabel="Car Modal"
     >
-      <div style={{ overflowY: "scroll", maxHeight: "80vh" }}>
-        {/* Your modal content here */}
+      <div>
+        <ModalName>{car.name}</ModalName>
+        <ModalLocationAndRating>
+          <p>
+            {car.rating} <span>{car.reviews.length || 0} Reviews</span>
+          </p>
+          <p>{car.location}</p>
+        </ModalLocationAndRating>
+        <ModalPrice>€{car.price}.00</ModalPrice>
+
+        <ImagesList>
+          {car.gallery.map((el) => {
+            return <CarImage $bgImage={el} key={uid()}></CarImage>;
+          })}
+        </ImagesList>
+
+        <ModalDescription>{car.description}</ModalDescription>
+
+        <PopUpsBtnContainer>
+          <PopupsBtns
+            onClick={() => setShowPopUp(!showPopUp)}
+            className={showPopUp ? "" : "isOpen"}
+          >
+            Features
+          </PopupsBtns>
+          <PopupsBtns
+            onClick={() => setShowPopUp(!showPopUp)}
+            className={showPopUp ? "isOpen" : ""}
+          >
+            Reviews
+          </PopupsBtns>
+        </PopUpsBtnContainer>
       </div>
     </Modal>
   );

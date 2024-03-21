@@ -11,14 +11,14 @@ export const CarItem = styled.li`
   padding: 24px;
 
   border: 1px solid ${(p) => p.theme.colors.borderColor};
-  border-radius: 20px;
+  border-radius: ${(p) => p.theme.radius.md};
 `;
 
 export const CarImage = styled.div`
   width: 100%;
   height: 310px;
 
-  border-radius: 10px;
+  border-radius: ${(p) => p.theme.radius.sm};
   background-image: url(${(props) => props.$bgImage});
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -36,15 +36,17 @@ export const PriceContainer = styled.div`
   gap: 10px;
 `;
 export const HeadInfo = styled.p`
-  font-size: 24px;
+  font-size: ${(p) => p.theme.fonts.bigSize};
   line-height: 30px;
-  font-weight: 600;
+  font-weight: ${(p) => p.theme.fonts.bold};
 `;
 
 export const LocationAndRating = styled.div`
   display: flex;
   gap: 16px;
 `;
+
+export const Location = styled.p``;
 
 export const Desctiption = styled.p`
   width: 525px;
@@ -69,7 +71,7 @@ export const TagsContainer = styled.div`
 export const TagContainer = styled.div`
   padding: 12px 18px;
   background-color: ${(p) => p.theme.colors.mainWhite};
-  border-radius: 100px;
+  border-radius: ${(p) => p.theme.radius.lg};
 `;
 
 export const TagText = styled.p`
@@ -82,7 +84,7 @@ export const ShowMoreBtn = styled.button`
   height: 56px;
 
   background-color: ${(p) => p.theme.colors.red};
-  border-radius: 200px;
+  border-radius: ${(p) => p.theme.radius.xlg};
   border: none;
   color: ${(p) => p.theme.colors.buttonText};
   transition: background-color ${(p) => p.theme.transition.transitionDurAndFunc};

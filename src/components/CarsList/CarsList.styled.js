@@ -20,7 +20,7 @@ export const LoadMore = styled.button`
 
   background-color: transparent;
   border: 1px solid ${(p) => p.theme.colors.loadMoreBorderColor};
-  border-radius: 200px;
+  border-radius: ${(p) => p.theme.radius.xlg};
 
   transition: border ${(p) => p.theme.transition.transitionDurAndFunc};
 
