@@ -42,13 +42,13 @@ export const Filters = () => {
         <CategoriesText>Vehicle type</CategoriesText>
         <CategoriesLine></CategoriesLine>
         <FiltersButtonContainer>
-          <FilterButton id={"camper-2"} iconType={"vehicle"} text={"Van"} />
+          <FilterButton id={"van"} iconType={"vehicle"} text={"Van"} />
           <FilterButton
-            id={"camper-1"}
+            id={"fully-integrated"}
             iconType={"vehicle"}
             text={"Fully Integrated"}
           />
-          <FilterButton id={"camper-3"} iconType={"vehicle"} text={"Alcove"} />
+          <FilterButton id={"alcove"} iconType={"vehicle"} text={"Alcove"} />
         </FiltersButtonContainer>
       </div>
       <SearchButton>Search</SearchButton>

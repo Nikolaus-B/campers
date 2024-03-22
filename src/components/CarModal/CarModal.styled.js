@@ -34,6 +34,7 @@ export const PopUpsBtnContainer = styled.div`
   display: flex;
   gap: 40px;
   margin-top: 44px;
+  margin-bottom: 44px;
   border-bottom: 1px solid ${(p) => p.theme.colors.borderColor};
 `;
 

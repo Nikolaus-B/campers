@@ -68,17 +68,6 @@ export const TagsContainer = styled.div`
   margin-bottom: 32px;
 `;
 
-export const TagContainer = styled.div`
-  padding: 12px 18px;
-  background-color: ${(p) => p.theme.colors.mainWhite};
-  border-radius: ${(p) => p.theme.radius.lg};
-`;
-
-export const TagText = styled.p`
-  line-height: 20px;
-  background-color: ${(p) => p.theme.colors.mainWhite};
-`;
-
 export const ShowMoreBtn = styled.button`
   width: 166px;
   height: 56px;

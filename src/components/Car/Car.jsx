@@ -1,4 +1,3 @@
-import { uid } from "uid";
 import { Icon } from "../Icon/Icon";
 import {
   CarImage,
@@ -9,12 +8,11 @@ import {
   LocationAndRating,
   PriceContainer,
   ShowMoreBtn,
-  TagContainer,
-  TagText,
   TagsContainer,
 } from "./Car.styled";
 import { CarModal } from "../CarModal/CarModal";
 import { useState } from "react";
+import { Details } from "../Details/Details";
 
 export const Car = ({ car }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -26,17 +24,6 @@ export const Car = ({ car }) => {
   function closeModal() {
     setIsOpen(false);
   }
-
-  const defineTabs = (tab, value) => {
-    if (tab === "beds") {
-      return value;
-    } else if (tab === "hob") {
-      return value;
-    } else if (tab === "adult") {
-      return value;
-    }
-    return value === 1 ? "" : value;
-  };
 
   return (
     <CarItem>
@@ -62,18 +49,7 @@ export const Car = ({ car }) => {
         </LocationAndRating>
         <Desctiption>{car.description}</Desctiption>
         <TagsContainer>
-          {Object.entries(car.details).map(([key, value]) => {
-            return value === 0 ? (
-              <div style={{ display: "none" }} key={uid()}></div>
-            ) : (
-              <TagContainer key={uid()}>
-                {/* <Icon /> */}
-                <TagText>
-                  {defineTabs(key, value)} {key}
-                </TagText>
-              </TagContainer>
-            );
-          })}
+          <Details details={car.details} />
         </TagsContainer>
         <ShowMoreBtn onClick={() => openModal()}>Show more</ShowMoreBtn>
       </div>
@@ -82,3 +58,19 @@ export const Car = ({ car }) => {
     </CarItem>
   );
 };
+
+//  {
+//    Object.entries(car.details).map(([key, value]) => {
+//      return value === 0 ? (
+//        <div style={{ display: "none" }} key={uid()}></div>
+//      ) : (
+//        <TagContainer key={uid()}>
+//          {/* <Icon /> */}
+//          <TagText>
+//            {defineTabs(key, value)}{" "}
+//            {key === "airConditioner" ? convertString(key) : key}
+//          </TagText>
+//        </TagContainer>
+//      );
+//    });
+//  }

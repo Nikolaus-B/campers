@@ -14,13 +14,17 @@ export const theme = {
   radius: {
     sm: "10px",
     md: "20px",
+    rewiewLogo: "60px",
     lg: "100px",
     xlg: "200px",
   },
   fonts: {
+    smSize: "18px",
     mdSize: "20px",
     bigSize: "24px",
     bigHeith: "30px",
+
+    md: "500",
     bold: "600",
   },
   transition: {
@@ -28,6 +32,6 @@ export const theme = {
   },
 };
 
-// ${p => p.theme.colors.white}
+// ${p => p.theme.colors.red}
 // ${p => p.theme.radius.sm}
-//  ${p => p.theme.fonts.mdSize}
+//  ${p => p.theme.fonts.bigSize}

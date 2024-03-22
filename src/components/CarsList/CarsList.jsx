@@ -10,7 +10,6 @@ export const CarsList = () => {
     <ListContainer>
       <CarList>
         {cars.map((car) => {
-          console.log(car);
           return <Car key={car.id} car={car.car} />;
         })}
       </CarList>

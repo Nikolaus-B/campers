@@ -11,6 +11,8 @@ import {
   PopUpsBtnContainer,
   PopupsBtns,
 } from "./CarModal.styled";
+import { FeaturesPopUp } from "../FeaturesPopUp/FeaturesPopUp";
+import { ReviewsPopUp } from "../ReviewsPopUp/ReviewsPopUp";
 
 const customStyles = {
   overlay: {
@@ -78,15 +80,12 @@ export const CarModal = ({ modalIsOpen, closeModal, car }) => {
           <p>{car.location}</p>
         </ModalLocationAndRating>
         <ModalPrice>€{car.price}.00</ModalPrice>
-
         <ImagesList>
           {car.gallery.map((el) => {
             return <CarImage $bgImage={el} key={uid()}></CarImage>;
           })}
         </ImagesList>
-
         <ModalDescription>{car.description}</ModalDescription>
-
         <PopUpsBtnContainer>
           <PopupsBtns
             onClick={() => setShowPopUp(!showPopUp)}
@@ -101,6 +100,11 @@ export const CarModal = ({ modalIsOpen, closeModal, car }) => {
             Reviews
           </PopupsBtns>
         </PopUpsBtnContainer>
+        {showPopUp ? (
+          <ReviewsPopUp reviews={car.reviews || []} />
+        ) : (
+          <FeaturesPopUp car={car} />
+        )}
       </div>
     </Modal>
   );
