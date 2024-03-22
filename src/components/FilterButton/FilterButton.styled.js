@@ -13,9 +13,18 @@ export const FilterButtonStyled = styled.button`
   line-height: 20px;
   font-weight: 500;
 
-  border: 1px solid rgba(16, 24, 40, 0.2);
+  border: 1px solid ${(p) => p.theme.colors.borderColor};
   border-radius: ${(p) => p.theme.radius.sm};
   background-color: transparent;
+  transition: border ${(p) => p.theme.transition.transitionDurAndFunc};
+
+  &:hover {
+    border: 1px solid ${(p) => p.theme.colors.red};
+  }
+
+  &.isSelected {
+    border: 1px solid ${(p) => p.theme.colors.red};
+  }
 `;
 
 export const ButtonContentContainer = styled.div`

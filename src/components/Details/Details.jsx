@@ -1,8 +1,9 @@
 import { uid } from "uid";
 import { TagContainer, TagText } from "./Details.styled";
+import { Icon } from "../Icon/Icon";
 
 export const Details = ({ details }) => {
-  const defineTabs = (tab, value) => {
+  const defineTabsValue = (tab, value) => {
     if (tab === "beds") {
       return value;
     } else if (tab === "hob") {
@@ -11,6 +12,15 @@ export const Details = ({ details }) => {
       return value;
     }
     return value === 1 ? "" : value;
+  };
+
+  const defineTabs = (tab, value) => {
+    if (tab === "beds") {
+      return value === 1 ? "bed" : tab;
+    } else if (tab === "airConditioner") {
+      return convertString(tab);
+    }
+    return tab;
   };
 
   const convertString = (string) => {
@@ -25,10 +35,13 @@ export const Details = ({ details }) => {
           <div style={{ display: "none" }} key={uid()}></div>
         ) : (
           <TagContainer key={uid()}>
-            {/* <Icon /> */}
+            <Icon
+              width={20}
+              height={20}
+              iconId={key === "bathroom" ? "toilet" : key.toLowerCase()}
+            />
             <TagText>
-              {defineTabs(key, value)}{" "}
-              {key === "airConditioner" ? convertString(key) : key}
+              {defineTabsValue(key, value)} {defineTabs(key, value)}
             </TagText>
           </TagContainer>
         );

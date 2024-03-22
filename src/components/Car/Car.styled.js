@@ -29,15 +29,18 @@ export const CarImage = styled.div`
 export const HeadInfocontainer = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
 `;
 
 export const PriceContainer = styled.div`
   display: flex;
   gap: 10px;
+  /* margin-bottom: 24px; */
 `;
 export const HeadInfo = styled.p`
   font-size: ${(p) => p.theme.fonts.bigSize};
   line-height: 30px;
+
   font-weight: ${(p) => p.theme.fonts.bold};
 `;
 
@@ -53,6 +56,7 @@ export const Desctiption = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 23px;
 
   color: ${(p) => p.theme.colors.grey};
 `;
@@ -64,8 +68,8 @@ export const TagsContainer = styled.div`
 
   height: 96px;
   overflow: hidden;
-  margin-top: 32px;
-  margin-bottom: 32px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 `;
 
 export const ShowMoreBtn = styled.button`

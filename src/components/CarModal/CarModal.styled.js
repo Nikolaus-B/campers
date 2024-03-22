@@ -1,5 +1,15 @@
 import styled, { keyframes } from "styled-components";
 
+export const CloseModal = styled.button`
+  position: absolute;
+
+  top: 40px;
+  right: 40px;
+
+  border: none;
+  background-color: transparent;
+`;
+
 export const ModalName = styled.p`
   font-size: ${(p) => p.theme.fonts.bigSize};
   line-height: 30px;

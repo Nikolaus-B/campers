@@ -58,19 +58,3 @@ export const Car = ({ car }) => {
     </CarItem>
   );
 };
-
-//  {
-//    Object.entries(car.details).map(([key, value]) => {
-//      return value === 0 ? (
-//        <div style={{ display: "none" }} key={uid()}></div>
-//      ) : (
-//        <TagContainer key={uid()}>
-//          {/* <Icon /> */}
-//          <TagText>
-//            {defineTabs(key, value)}{" "}
-//            {key === "airConditioner" ? convertString(key) : key}
-//          </TagText>
-//        </TagContainer>
-//      );
-//    });
-//  }

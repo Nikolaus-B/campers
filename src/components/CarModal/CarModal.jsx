@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { CarImage } from "../Car/Car.styled";
 import { uid } from "uid";
 import {
+  CloseModal,
   ImagesList,
   ModalDescription,
   ModalLocationAndRating,
@@ -13,6 +14,7 @@ import {
 } from "./CarModal.styled";
 import { FeaturesPopUp } from "../FeaturesPopUp/FeaturesPopUp";
 import { ReviewsPopUp } from "../ReviewsPopUp/ReviewsPopUp";
+import { Icon } from "../Icon/Icon";
 
 const customStyles = {
   overlay: {
@@ -72,6 +74,9 @@ export const CarModal = ({ modalIsOpen, closeModal, car }) => {
       contentLabel="Car Modal"
     >
       <div>
+        <CloseModal onClick={() => closeModal()}>
+          <Icon width={32} height={32} iconId={"close"} />
+        </CloseModal>
         <ModalName>{car.name}</ModalName>
         <ModalLocationAndRating>
           <p>
