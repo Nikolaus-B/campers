@@ -1,12 +1,19 @@
 import { useSelector } from "react-redux";
-import { selectfilteredCars } from "../../redux/cars/carsSelectors";
+import {
+  // selectFilteredByType,
+  selectFilteredCarsByInput,
+  // selectfilteredCarsByEquipment,
+} from "../../redux/cars/carsSelectors";
 import { Car } from "../Car/Car";
 import { CarList, ListContainer, LoadMore } from "./CarsList.styled";
 
 export const CarsList = () => {
   // const cars = useSelector(selectCars);
-  const filteredCars = useSelector(selectfilteredCars);
+  const filteredCars = useSelector(selectFilteredCarsByInput);
 
+  // const equip = useSelector(selectfilteredCarsByEquipment);
+  // const type = useSelector(selectFilteredByType);
+  // console.log(equip);
   return (
     <ListContainer>
       <CarList>
