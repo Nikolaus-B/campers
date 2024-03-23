@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Icon } from "../Icon/Icon";
 import {
   ButtonContentContainer,
@@ -6,7 +6,7 @@ import {
 } from "./FilterButton.styled";
 
 export const FilterButton = ({ id, iconType, text }) => {
-  const [isSelected, setIsSelected] = useState(false);
+  // const [isSelected, setIsSelected] = useState(false);
 
   return (
     <FilterButtonStyled onClick={() => console.log(text)}>

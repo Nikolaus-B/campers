@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 import { FilterButton } from "../FilterButton/FilterButton";
 import {
   CategoriesLine,
@@ -8,13 +9,21 @@ import {
   Location,
   SearchButton,
 } from "./Filters.styled";
+import { changeInputFilter } from "../../redux/filter/filterSlice";
 
 export const Filters = () => {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <div>
         <Location>Location</Location>
-        <FilterInput name="location" type="text" placeholder="Kyiv, Ukraine" />
+        <FilterInput
+          onChange={(e) => dispatch(changeInputFilter(e.target.value))}
+          name="location"
+          type="text"
+          placeholder="Kyiv, Ukraine"
+        />
       </div>
       <FilterText>Filters</FilterText>
       <div>

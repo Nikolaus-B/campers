@@ -7,7 +7,12 @@ const filterSlice = createSlice({
     equipment: [],
     type: [],
   },
-  reducers: {},
+  reducers: {
+    changeInputFilter: (state, action) => {
+      state.inputValue = action.payload;
+    },
+  },
 });
 
+export const { changeInputFilter } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
