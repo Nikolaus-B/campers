@@ -68,8 +68,19 @@ export const HeadInfocontainer = styled.div`
 export const PriceContainer = styled.div`
   display: flex;
   gap: 10px;
-  /* margin-bottom: 24px; */
 `;
+
+export const HeadName = styled.p`
+  width: 370px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: ${(p) => p.theme.fonts.bigSize};
+  line-height: 30px;
+
+  font-weight: ${(p) => p.theme.fonts.bold};
+`;
+
 export const HeadInfo = styled.p`
   font-size: ${(p) => p.theme.fonts.bigSize};
   line-height: 30px;

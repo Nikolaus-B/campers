@@ -1,3 +1,4 @@
+import { Detail } from "../Details/Detail";
 import { Details } from "../Details/Details";
 import {
   DetailsContainer,
@@ -16,6 +17,8 @@ export const FeaturesPopUp = ({ car }) => {
     <FeaturesContainer>
       <FeaturesWrapper>
         <DetailsContainer>
+          <Detail detail={"adults"} value={car.adults} iconId={"people"} />
+          <Detail detail={car.transmission} value={""} iconId={"automatic"} />
           <Details details={car.details} />
         </DetailsContainer>
         <FeaturedHead>Vehicle details</FeaturedHead>

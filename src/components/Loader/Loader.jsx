@@ -6,7 +6,7 @@ export const Loader = () => {
     <Backbrop>
       <LoaderContainer>
         <RotatingLines
-          strokeColor="#4f58fd"
+          strokeColor="#D84343"
           strokeWidth="5"
           animationDuration="0.75"
           width="96"

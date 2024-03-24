@@ -6,6 +6,7 @@ import {
   FavouriteButton,
   HeadInfo,
   HeadInfocontainer,
+  HeadName,
   LocationAndRating,
   PriceContainer,
   ReviewsAndStarContainer,
@@ -18,6 +19,7 @@ import { Details } from "../Details/Details";
 import { useDispatch } from "react-redux";
 import { toggleFavourite } from "../../redux/cars/carsSlice";
 import { useIsFavourite } from "../../hooks/useIsFavourite";
+import { Detail } from "../Details/Detail";
 
 export const Car = ({ car, hidden }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -47,7 +49,7 @@ export const Car = ({ car, hidden }) => {
       ></CarImage>
       <div>
         <HeadInfocontainer>
-          <HeadInfo>{car.name}</HeadInfo>
+          <HeadName>{car.name}</HeadName>
           <PriceContainer>
             <HeadInfo>€{car.price}.00</HeadInfo>
             <FavouriteButton onClick={() => toogleFavouriteCar(car._id)}>
@@ -69,6 +71,8 @@ export const Car = ({ car, hidden }) => {
         </LocationAndRating>
         <Desctiption>{car.description}</Desctiption>
         <TagsContainer>
+          <Detail detail={"adults"} value={car.adults} iconId={"people"} />
+          <Detail detail={car.transmission} value={""} iconId={"automatic"} />
           <Details details={car.details} />
         </TagsContainer>
         <ShowMoreBtn onClick={() => openModal()}>Show more</ShowMoreBtn>
