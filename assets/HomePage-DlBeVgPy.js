@@ -1,4 +1,4 @@
-import{u as o,r as l,a as m,j as t,b as d,t as g,c as b,d as j,e as C}from"./index-p11wWJHh.js";import{s as f,C as y,I as v}from"./Car-C3Q-LWZ0.js";const F=o.div`
+import{u as o,r as d,a as m,j as t,b as x,t as g,c as b,d as j,e as C}from"./index-zj_XXqsX.js";import{s as f,C as y,I as v}from"./Car-C_cBJC9A.js";const F=o.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -21,7 +21,7 @@ import{u as o,r as l,a as m,j as t,b as d,t as g,c as b,d as j,e as C}from"./ind
   &:hover {
     border: 1px solid ${e=>e.theme.colors.red};
   }
-`,k=()=>{const[e,r]=l.useState(4),c=m(f),a=()=>{r(n=>n+4)},s=e>=c.length;return t.jsxs(F,{children:[t.jsx(w,{children:c.slice(0,e).map(n=>t.jsx(y,{car:n.car},n.id))}),!s&&t.jsx($,{onClick:a,disabled:s,children:"Load more"})]})},S=o.button`
+`,k=()=>{const[e,r]=d.useState(4),c=m(f),a=()=>{r(n=>n+4)},s=e>=c.length;return t.jsxs(F,{children:[t.jsx(w,{children:c.map((n,l)=>t.jsx(y,{car:n.car,hidden:l>=e},n.id))}),!s&&t.jsx($,{onClick:a,disabled:s,children:"Load more"})]})},S=o.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +49,7 @@ import{u as o,r as l,a as m,j as t,b as d,t as g,c as b,d as j,e as C}from"./ind
   align-items: center;
   gap: 5px;
   max-width: 80px;
-`,i=({id:e,iconType:r,text:c})=>{const a=d(),[s,n]=l.useState(!1),u=()=>{a((r==="equipment"?g:b)(e.toLowerCase())),n(!s)};return t.jsx(S,{className:s?"isSelected":"",onClick:()=>u(),children:t.jsxs(T,{children:[t.jsx(v,{iconId:e,width:r==="equipment"?32:40,height:r==="equipment"?32:28}),t.jsx("p",{children:c})]})})},q=o.p`
+`,i=({id:e,iconType:r,text:c})=>{const a=x(),[s,n]=d.useState(!1),l=()=>{a((r==="equipment"?g:b)(e.toLowerCase())),n(!s)};return t.jsx(S,{className:s?"isSelected":"",onClick:()=>l(),children:t.jsxs(T,{children:[t.jsx(v,{iconId:e,width:r==="equipment"?32:40,height:r==="equipment"?32:28}),t.jsx("p",{children:c})]})})},q=o.p`
   color: rgba(16, 24, 40, 0.6);
   margin-bottom: 8px;
 `,L=o.input`
@@ -65,16 +65,16 @@ import{u as o,r as l,a as m,j as t,b as d,t as g,c as b,d as j,e as C}from"./ind
   margin-top: 32px;
   margin-bottom: 14px;
   color: rgba(71, 84, 103, 1);
-`,x=o.p`
+`,p=o.p`
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 24px;
-`,p=o.div`
+`,h=o.div`
   width: 360px;
   height: 1px;
   margin-bottom: 24px;
   background-color: rgba(16, 24, 40, 0.1);
-`,h=o.div`
+`,u=o.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -97,4 +97,4 @@ import{u as o,r as l,a as m,j as t,b as d,t as g,c as b,d as j,e as C}from"./ind
   &:hover {
     background-color: ${e=>e.theme.colors.hoverColor};
   }
-`,B=()=>{const e=d();return t.jsxs("div",{children:[t.jsxs("div",{children:[t.jsx(q,{children:"Location"}),t.jsx(L,{onChange:r=>e(j(r.target.value)),name:"location",type:"text",placeholder:"Kyiv, Ukraine"})]}),t.jsx(A,{children:"Filters"}),t.jsxs("div",{children:[t.jsx(x,{children:"Vehicle equipment"}),t.jsx(p,{}),t.jsxs(h,{children:[t.jsx(i,{id:"airConditioner",iconType:"equipment",text:"AC"}),t.jsx(i,{id:"automatic",iconType:"equipment",text:"Automatic"}),t.jsx(i,{id:"kitchen",iconType:"equipment",text:"Kitchen"}),t.jsx(i,{id:"tv",iconType:"equipment",text:"TV"}),t.jsx(i,{id:"shower",iconType:"equipment",text:"Shower/WC"})]}),t.jsx(x,{children:"Vehicle type"}),t.jsx(p,{}),t.jsxs(h,{children:[t.jsx(i,{id:"paneltruck",iconType:"vehicle",text:"Van"}),t.jsx(i,{id:"fullyintegrated",iconType:"vehicle",text:"Fully Integrated"}),t.jsx(i,{id:"alcove",iconType:"vehicle",text:"Alcove"})]})]}),t.jsx(I,{children:"Search"})]})};function M(){const e=d();return l.useEffect(()=>{e(C())},[e]),t.jsxs("section",{className:"container",children:[t.jsx(B,{}),t.jsx(k,{})]})}export{M as default};
+`,B=()=>{const e=x();return t.jsxs("div",{children:[t.jsxs("div",{children:[t.jsx(q,{children:"Location"}),t.jsx(L,{onChange:r=>e(j(r.target.value)),name:"location",type:"text",placeholder:"Kyiv, Ukraine"})]}),t.jsx(A,{children:"Filters"}),t.jsxs("div",{children:[t.jsx(p,{children:"Vehicle equipment"}),t.jsx(h,{}),t.jsxs(u,{children:[t.jsx(i,{id:"airConditioner",iconType:"equipment",text:"AC"}),t.jsx(i,{id:"automatic",iconType:"equipment",text:"Automatic"}),t.jsx(i,{id:"kitchen",iconType:"equipment",text:"Kitchen"}),t.jsx(i,{id:"tv",iconType:"equipment",text:"TV"}),t.jsx(i,{id:"shower",iconType:"equipment",text:"Shower/WC"})]}),t.jsx(p,{children:"Vehicle type"}),t.jsx(h,{}),t.jsxs(u,{children:[t.jsx(i,{id:"paneltruck",iconType:"vehicle",text:"Van"}),t.jsx(i,{id:"fullyintegrated",iconType:"vehicle",text:"Fully Integrated"}),t.jsx(i,{id:"alcove",iconType:"vehicle",text:"Alcove"})]})]}),t.jsx(I,{children:"Search"})]})};function M(){const e=x();return d.useEffect(()=>{e(C())},[e]),t.jsxs("section",{className:"container",children:[t.jsx(B,{}),t.jsx(k,{})]})}export{M as default};
