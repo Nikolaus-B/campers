@@ -3,6 +3,7 @@ import {
   CarImage,
   CarItem,
   Desctiption,
+  FavouriteButton,
   HeadInfo,
   HeadInfocontainer,
   LocationAndRating,
@@ -13,9 +14,13 @@ import {
 import { CarModal } from "../CarModal/CarModal";
 import { useState } from "react";
 import { Details } from "../Details/Details";
+import { useDispatch } from "react-redux";
+import { toggleFavourite } from "../../redux/cars/carsSlice";
+import { useIsFavourite } from "../../hooks/useIsFavourite";
 
 export const Car = ({ car }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
 
   function openModal() {
     setIsOpen(true);
@@ -24,6 +29,12 @@ export const Car = ({ car }) => {
   function closeModal() {
     setIsOpen(false);
   }
+
+  const toogleFavouriteCar = (id) => {
+    dispatch(toggleFavourite(id));
+  };
+
+  const isFavourite = useIsFavourite(car._id);
 
   return (
     <CarItem>
@@ -38,7 +49,13 @@ export const Car = ({ car }) => {
           <HeadInfo>{car.name}</HeadInfo>
           <PriceContainer>
             <HeadInfo>€{car.price}.00</HeadInfo>
-            <Icon width={24} height={24} iconId={"heart"} />
+            <FavouriteButton onClick={() => toogleFavouriteCar(car._id)}>
+              <Icon
+                width={24}
+                height={24}
+                iconId={isFavourite ? "heart-red" : "heart"}
+              />
+            </FavouriteButton>
           </PriceContainer>
         </HeadInfocontainer>
         <LocationAndRating>

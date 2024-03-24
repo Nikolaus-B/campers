@@ -4,11 +4,7 @@ import { Car } from "../Car/Car";
 import { CarList, ListContainer, LoadMore } from "./CarsList.styled";
 
 export const CarsList = () => {
-  // const cars = useSelector(selectCars);
   const filteredCars = useSelector(selectFilteredCars);
-
-  // const equip = useSelector(selectfilteredCarsByEquipment);
-  // const type = useSelector(selectFilteredByType);
 
   return (
     <ListContainer>

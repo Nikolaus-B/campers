@@ -1,7 +1,9 @@
+import { FavouriteList } from "../components/FavouriteList/FavouriteList";
+
 export default function FavouritePage() {
   return (
     <section className="container">
-      <h1>favourite</h1>
+      <FavouriteList />
     </section>
   );
 }

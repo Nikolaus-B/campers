@@ -29,9 +29,18 @@ const filterSlice = createSlice({
         state.type.splice(index, 1);
       }
     },
+    clearFilters: (state) => {
+      state.inputValue = "";
+      state.equipment = [];
+      state.type = [];
+    },
   },
 });
 
-export const { changeInputFilter, toogleEquipmentFilter, toogleTypeFilter } =
-  filterSlice.actions;
+export const {
+  changeInputFilter,
+  toogleEquipmentFilter,
+  toogleTypeFilter,
+  clearFilters,
+} = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;

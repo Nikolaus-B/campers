@@ -7,6 +7,8 @@ import {
 
 export const selectCars = (state) => state.cars.cars;
 
+export const selectFavourites = (state) => state.cars.favourites;
+
 export const selectFilteredCarsByInput = createSelector(
   [selectCars, selectInputValue, selectEquipmentFilter],
   (cars, inputValue) => {

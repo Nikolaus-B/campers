@@ -44,6 +44,11 @@ export const HeadInfo = styled.p`
   font-weight: ${(p) => p.theme.fonts.bold};
 `;
 
+export const FavouriteButton = styled.button`
+  border: none;
+  background-color: transparent;
+`;
+
 export const LocationAndRating = styled.div`
   display: flex;
   gap: 16px;
