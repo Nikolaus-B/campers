@@ -1,6 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-// const getImage = (props) => props.$bgImage;
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
 
 export const CarItem = styled.li`
   display: flex;
@@ -12,6 +28,23 @@ export const CarItem = styled.li`
 
   border: 1px solid ${(p) => p.theme.colors.borderColor};
   border-radius: ${(p) => p.theme.radius.md};
+
+  animation: ${fadeIn} 0.5s ease;
+
+  &.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    bottom: -100px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    opacity: 0;
+    animation: ${fadeOut} 0.5s ease;
+
+    pointer-events: none;
+  }
 `;
 
 export const CarImage = styled.div`

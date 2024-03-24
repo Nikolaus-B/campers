@@ -18,7 +18,7 @@ import { useDispatch } from "react-redux";
 import { toggleFavourite } from "../../redux/cars/carsSlice";
 import { useIsFavourite } from "../../hooks/useIsFavourite";
 
-export const Car = ({ car }) => {
+export const Car = ({ car, hidden }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 
@@ -37,7 +37,7 @@ export const Car = ({ car }) => {
   const isFavourite = useIsFavourite(car._id);
 
   return (
-    <CarItem>
+    <CarItem className={hidden ? "hidden" : ""}>
       <CarImage
         $bgImage={
           car.gallery[0] ||
