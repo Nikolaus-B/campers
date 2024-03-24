@@ -24,11 +24,12 @@ export const theme = {
     bigSize: "24px",
     bigHeith: "30px",
 
+    normal: "400",
     md: "500",
     bold: "600",
   },
   transition: {
-    transitionDurAndFunc: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
+    transitionDurAndFunc: "350ms cubic-bezier(0.4, 0, 0.2, 1)",
   },
 };
 

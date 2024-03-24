@@ -1,7 +1,9 @@
+import { WelcomeLayout } from "../components/WelcomeLayout/WelcomeLayout";
+
 export default function WelcomePage() {
   return (
-    <section className="container">
-      <h1>WelcomePage</h1>
+    <section style={{ paddingTop: "20px" }} className="container">
+      <WelcomeLayout />
     </section>
   );
 }
