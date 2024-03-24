@@ -7,14 +7,32 @@ import {
   ReviewImageLetter,
   ReviewList,
   ReviewerName,
+  StarsContainer,
 } from "./ReviewsPopUp.styled";
+import { Icon } from "../Icon/Icon";
 
 export const ReviewsPopUp = ({ reviews }) => {
+  const renderStars = (rating) => {
+    const yellowStars = Math.floor(rating);
+    const grayStars = 5 - yellowStars;
+
+    const stars = [];
+    for (let i = 0; i < yellowStars; i++) {
+      stars.push(
+        <Icon width={16} height={16} key={`star-${i}`} iconId={"star-yellow"} />
+      );
+    }
+    for (let i = 0; i < grayStars; i++) {
+      stars.push(
+        <Icon width={16} height={16} key={`gray-star-${i}`} iconId={"star"} />
+      );
+    }
+    return stars;
+  };
   return (
     <div>
       <ReviewList>
         {reviews.map((review) => {
-          console.log(review);
           return (
             <Review key={uid()}>
               <ReviewHeader>
@@ -27,7 +45,9 @@ export const ReviewsPopUp = ({ reviews }) => {
                   <ReviewerName>
                     {review.reviewer_name ? review.reviewer_name : "anonim"}
                   </ReviewerName>
-                  <div></div>
+                  <StarsContainer>
+                    {renderStars(review.reviewer_rating)}
+                  </StarsContainer>
                 </ReviewHeaderWrapper>
               </ReviewHeader>
               <ReviewComment>{review.comment}</ReviewComment>

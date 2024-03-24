@@ -8,6 +8,7 @@ import {
   HeadInfocontainer,
   LocationAndRating,
   PriceContainer,
+  ReviewsAndStarContainer,
   ShowMoreBtn,
   TagsContainer,
 } from "./Car.styled";
@@ -59,9 +60,11 @@ export const Car = ({ car, hidden }) => {
           </PriceContainer>
         </HeadInfocontainer>
         <LocationAndRating>
-          <p>
-            {car.rating} <span>{car.reviews.length || 0} Reviews</span>
-          </p>
+          <ReviewsAndStarContainer>
+            <Icon width={16} height={16} iconId={"star-yellow"} />
+            <p>{car.rating}</p>
+            <span>{car.reviews.length || 0} Reviews</span>
+          </ReviewsAndStarContainer>
           <p>{car.location}</p>
         </LocationAndRating>
         <Desctiption>{car.description}</Desctiption>

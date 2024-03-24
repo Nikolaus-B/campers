@@ -87,6 +87,13 @@ export const LocationAndRating = styled.div`
   gap: 16px;
 `;
 
+export const ReviewsAndStarContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+`;
+
 export const Location = styled.p``;
 
 export const Desctiption = styled.p`

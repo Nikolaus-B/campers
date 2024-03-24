@@ -22,6 +22,9 @@ export const FeaturedHead = styled.p`
 
 export const InfoContainer = styled.div`
   margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 `;
 
 export const InfoWrapper = styled.div`

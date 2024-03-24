@@ -15,6 +15,12 @@ export const ReviewHeader = styled.div`
   margin-bottom: 16px;
 `;
 
+export const StarsContainer = styled.div`
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+`;
+
 export const ReviewImageLetter = styled.p`
   display: flex;
   justify-content: center;
