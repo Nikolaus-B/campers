@@ -18,10 +18,6 @@ export const FilterButtonStyled = styled.button`
   background-color: transparent;
   transition: border ${(p) => p.theme.transition.transitionDurAndFunc};
 
-  &:hover {
-    border: 1px solid ${(p) => p.theme.colors.red};
-  }
-
   &.isSelected {
     border: 1px solid ${(p) => p.theme.colors.red};
   }

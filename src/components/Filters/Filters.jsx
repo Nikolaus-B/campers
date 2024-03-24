@@ -30,7 +30,11 @@ export const Filters = () => {
         <CategoriesText>Vehicle equipment</CategoriesText>
         <CategoriesLine></CategoriesLine>
         <FiltersButtonContainer>
-          <FilterButton id={"ac"} iconType={"equipment"} text={"AC"} />
+          <FilterButton
+            id={"airConditioner"}
+            iconType={"equipment"}
+            text={"AC"}
+          />
           <FilterButton
             id={"automatic"}
             iconType={"equipment"}
@@ -51,9 +55,9 @@ export const Filters = () => {
         <CategoriesText>Vehicle type</CategoriesText>
         <CategoriesLine></CategoriesLine>
         <FiltersButtonContainer>
-          <FilterButton id={"van"} iconType={"vehicle"} text={"Van"} />
+          <FilterButton id={"paneltruck"} iconType={"vehicle"} text={"Van"} />
           <FilterButton
-            id={"fully-integrated"}
+            id={"fullyintegrated"}
             iconType={"vehicle"}
             text={"Fully Integrated"}
           />

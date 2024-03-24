@@ -5,13 +5,28 @@ import {
   ButtonContentContainer,
   FilterButtonStyled,
 } from "./FilterButton.styled";
-import { toogleEquipmentFilter } from "../../redux/filter/filterSlice";
+import {
+  toogleEquipmentFilter,
+  toogleTypeFilter,
+} from "../../redux/filter/filterSlice";
+import { useState } from "react";
 
 export const FilterButton = ({ id, iconType, text }) => {
-  // const [isSelected, setIsSelected] = useState(false);
   const dispatch = useDispatch();
+  const [isSelected, setIsSelected] = useState(false);
+  const toogleFilter = () => {
+    const toggleAction =
+      iconType === "equipment" ? toogleEquipmentFilter : toogleTypeFilter;
+
+    dispatch(toggleAction(id.toLowerCase()));
+    setIsSelected(!isSelected);
+  };
+
   return (
-    <FilterButtonStyled onClick={() => dispatch(toogleEquipmentFilter(text))}>
+    <FilterButtonStyled
+      className={isSelected ? "isSelected" : ""}
+      onClick={() => toogleFilter()}
+    >
       <ButtonContentContainer>
         <Icon
           iconId={id}

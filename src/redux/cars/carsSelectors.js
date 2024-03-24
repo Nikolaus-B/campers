@@ -30,13 +30,13 @@ export const selectfilteredCarsByEquipment = createSelector(
       const { transmission, details } = car;
       const KeysOfEquipment = [transmission];
 
-      Object.entries(details).map(([key, value]) => {
+      Object.entries(details).forEach(([key, value]) => {
         if (value !== 0) {
-          KeysOfEquipment.push(key);
+          KeysOfEquipment.push(key.toLowerCase());
         }
       });
 
-      return equipmentFilter.some((equip) => KeysOfEquipment.includes(equip));
+      return equipmentFilter.every((equip) => KeysOfEquipment.includes(equip));
     });
   }
 );
@@ -54,5 +54,18 @@ export const selectFilteredByType = createSelector(
 
       return byType.some((type) => carForm.includes(type.toLowerCase()));
     });
+  }
+);
+
+export const selectFilteredCars = createSelector(
+  [
+    selectFilteredCarsByInput,
+    selectfilteredCarsByEquipment,
+    selectFilteredByType,
+  ],
+  (carsByInput, carsByEquipment, carsByType) => {
+    return carsByInput.filter(
+      (car) => carsByEquipment.includes(car) && carsByType.includes(car)
+    );
   }
 );
