@@ -33,7 +33,7 @@ export const theme = {
   },
 };
 
-// ${p => p.theme.colors.red}
+// ${p => p.theme.colors.borderColor}
 // ${p => p.theme.radius.sm}
 //  ${p => p.theme.fonts.bigSize}
 // ${p => p.theme.transition.transitionDurAndFunc}

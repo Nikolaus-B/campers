@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const FeaturesContainer = styled.div``;
+export const FeaturesContainer = styled.div`
+  display: flex;
+  gap: 24px;
+`;
 
 export const FeaturesWrapper = styled.div`
   width: 430px;

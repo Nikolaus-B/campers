@@ -7,9 +7,11 @@ import {
   ReviewImageLetter,
   ReviewList,
   ReviewerName,
+  ReviewsContainer,
   StarsContainer,
 } from "./ReviewsPopUp.styled";
 import { Icon } from "../Icon/Icon";
+import { FeedbackForm } from "../FeedbackForm/FeedbackForm";
 
 export const ReviewsPopUp = ({ reviews }) => {
   const renderStars = (rating) => {
@@ -30,7 +32,7 @@ export const ReviewsPopUp = ({ reviews }) => {
     return stars;
   };
   return (
-    <div>
+    <ReviewsContainer>
       <ReviewList>
         {reviews.map((review) => {
           return (
@@ -55,6 +57,7 @@ export const ReviewsPopUp = ({ reviews }) => {
           );
         })}
       </ReviewList>
-    </div>
+      <FeedbackForm />
+    </ReviewsContainer>
   );
 };

@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const ReviewsContainer = styled.div`
+  display: flex;
+  gap: 24px;
+`;
+
 export const ReviewList = styled.ul`
   display: flex;
   flex-direction: column;

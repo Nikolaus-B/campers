@@ -1,5 +1,6 @@
 import { Detail } from "../Details/Detail";
 import { Details } from "../Details/Details";
+import { FeedbackForm } from "../FeedbackForm/FeedbackForm";
 import {
   DetailsContainer,
   FeaturedHead,
@@ -49,6 +50,7 @@ export const FeaturesPopUp = ({ car }) => {
           </InfoWrapper>
         </InfoContainer>
       </FeaturesWrapper>
+      <FeedbackForm />
     </FeaturesContainer>
   );
 };
