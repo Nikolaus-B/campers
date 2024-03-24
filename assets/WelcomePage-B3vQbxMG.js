@@ -1,4 +1,4 @@
-import{u as r,j as o}from"./index-BzWMwyDQ.js";const t=r.div`
+import{u as r,j as o}from"./index-C7UjRh6h.js";const t=r.div`
   display: flex;
   height: 600px;
   width: 100%;
