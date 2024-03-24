@@ -3,6 +3,8 @@ import { Suspense, useEffect } from "react";
 import { GlobalStyle } from "../GlobalStyle";
 import { useDispatch } from "react-redux";
 import { fetchCars } from "../../redux/cars/operations";
+import { Header } from "../Header/Header";
+import { Loader } from "../Loader/Loader";
 
 export const AppLayout = () => {
   const dispatch = useDispatch();
@@ -12,8 +14,11 @@ export const AppLayout = () => {
 
   return (
     <>
+      <header>
+        <Header />
+      </header>
       <main>
-        <Suspense fallback={<div>Loader</div>}>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </main>
