@@ -11,14 +11,14 @@ import { theme } from "./theme.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/campers">
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter>
           <ThemeProvider theme={theme}>
             <App />
           </ThemeProvider>
-        </PersistGate>
-      </Provider>
-    </BrowserRouter>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );

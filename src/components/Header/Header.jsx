@@ -6,8 +6,8 @@ export const Header = () => {
     <HeaderContainer>
       <HeaderNavigation>
         <NavLink to="/">RentCamp</NavLink>
-        <NavLink to="home">Rent</NavLink>
-        <NavLink to="favourite">Favourite</NavLink>
+        <NavLink to="/home">Rent</NavLink>
+        <NavLink to="/favourite">Favourite</NavLink>
       </HeaderNavigation>
     </HeaderContainer>
   );
