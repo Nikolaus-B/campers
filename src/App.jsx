@@ -12,8 +12,8 @@ function App() {
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<WelcomePage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/favourite" element={<FavouritePage />} />
+        <Route path="home" element={<HomePage />} />
+        <Route path="favourite" element={<FavouritePage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
